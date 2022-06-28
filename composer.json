@@ -12,6 +12,7 @@
         "laravel/framework": "^9.11",
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
+        "league/flysystem-aws-s3-v3": "^3.0",
         "spatie/browsershot": "^3.56",
         "wnx/sidecar-browsershot": "^1.1"
     },
