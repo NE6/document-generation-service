@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\ValidPath;
 use Illuminate\Foundation\Http\FormRequest;
 
 class Document extends FormRequest
@@ -17,6 +18,7 @@ class Document extends FormRequest
             'id' => 'required|integer',
             'name' => 'required|string',
             'contents' => 'required',
+            'path' => ['nullable', 'string', new ValidPath]
         ];
     }
 }
