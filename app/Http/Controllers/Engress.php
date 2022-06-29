@@ -15,6 +15,7 @@ class Engress extends Controller
      * Responsible for making sidecar request, and sending contents to render.
      * Will return formatted response.
      *
+     * 
      * @param Document $request
      * @return JsonResponse
      */
