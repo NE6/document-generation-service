@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\Engress;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/document', [Engress::class, 'consumeDocumentRequest']);
+Route::post('/document', [Engress::class, 'generateAndSaveDocument']);
