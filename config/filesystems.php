@@ -46,13 +46,14 @@ return [
 
         's3' => [
             'driver' => 's3',
-            'key' => env('AWS_ACCESS_KEY_ID'),
-            'secret' => env('AWS_SECRET_ACCESS_KEY'),
-            'region' => env('AWS_DEFAULT_REGION'),
-            'bucket' => env('AWS_BUCKET'),
-            'url' => env('AWS_URL'),
-            'endpoint' => env('AWS_ENDPOINT'),
-            'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
+            'key' => env('NON_SERVERLESS_AWS_ACCESS_KEY_ID'),
+            'secret' => env('NON_SERVERLESS_AWS_SECRET_ACCESS_KEY'),
+            'token' => env('NON_SERVERLESS_AWS_SESSION_TOKEN'),
+            'region' => env('NON_SERVERLESS_AWS_DEFAULT_REGION'),
+            'bucket' => env('NON_SERVERLESS_AWS_BUCKET'),
+            'url' => env('NON_SERVERLESS_AWS_URL'),
+            'endpoint' => env('NON_SERVERLESS_AWS_ENDPOINT'),
+            'use_path_style_endpoint' => env('NON_SERVERLESS_AWS_USE_PATH_STYLE_ENDPOINT', false),
             'throw' => false,
         ],
 
