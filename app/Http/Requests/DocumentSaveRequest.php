@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use App\Rules\ValidPath;
 use Illuminate\Foundation\Http\FormRequest;
 
-class Document extends FormRequest
+class DocumentSaveRequest extends FormRequest
 {
     /**
      * Document request validation rules.
@@ -18,7 +18,11 @@ class Document extends FormRequest
             'id' => 'required|integer',
             'name' => 'required|string',
             'contents' => 'required',
-            'path' => ['nullable', 'string', new ValidPath]
+            'path' => ['nullable', 'string', new ValidPath],
+            'key' => 'nullable|sometimes|string',
+            'secret' => 'nullable|sometimes|string',
+            'region' => 'nullable|sometimes|string',
+            'bucket' => 'nullable|sometimes|string',
         ];
     }
 }
