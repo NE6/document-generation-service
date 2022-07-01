@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Actions\DecryptEncryptedApiParameters;
 use App\DataTransferObjects\Document as DocumentDataTransferObject;
 use App\Http\Requests\DocumentSaveRequest;
 use Illuminate\Http\JsonResponse;
@@ -20,7 +21,7 @@ class Engress extends Controller
      */
     public function generateAndSaveDocument(DocumentSaveRequest $request): JsonResponse
     {
-        $document = $this->processDocumentRequest($request);
+        $document = DecryptEncryptedApiParameters::execute($this->processDocumentRequest($request));
         try {
             // Generate our document using Sidecar, AWS Lambda and Browsershot.
             $generatedDocument = BrowsershotLambda::html($document->contents)->pdf();
@@ -84,7 +85,7 @@ class Engress extends Controller
     private function saveDocument(DocumentDataTransferObject $document, $generatedDocument): string
     {
         // Check if we're using dynamic S3. If we are, we must pass in our AWS creds.
-        if ($document->key) {
+        if ($document->aws_key) {
             $randomlyGenerateUniqueFilename = $this->saveDocumentOnDynamicS3Disk($document, $generatedDocument);
         } else {
             $randomlyGenerateUniqueFilename = $this->saveDocumentOnDefaultDisk($document, $generatedDocument);

@@ -127,6 +127,30 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | AWS INBOUND API DECRYPTION KEY
+    |--------------------------------------------------------------------------
+    |
+    | This is used to decrypt our inbound API credentials if we're using
+    | dynamic S3 buckets.
+    |
+    */
+
+    'aws_inbound_api_decryption_key' => env('AWS_INBOUND_API_DECRYPTION_KEY'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | AWS INBOUND API DECRYPTION METHOD
+    |--------------------------------------------------------------------------
+    |
+    | This is used the encryption method we're using to internally decrypt out
+    | API AWS params.
+    |
+    */
+
+    'aws_inbound_api_decryption_method' => env('AWS_INBOUND_API_DECRYPTION_METHOD'),
+
+    /*
+    |--------------------------------------------------------------------------
     | Maintenance Mode Driver
     |--------------------------------------------------------------------------
     |

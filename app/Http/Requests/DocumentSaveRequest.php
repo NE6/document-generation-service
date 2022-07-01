@@ -19,10 +19,10 @@ class DocumentSaveRequest extends FormRequest
             'name' => 'required|string',
             'contents' => 'required',
             'path' => ['nullable', 'string', new ValidPath],
-            'key' => 'nullable|sometimes|string',
-            'secret' => 'nullable|sometimes|string',
-            'region' => 'nullable|sometimes|string',
-            'bucket' => 'nullable|sometimes|string',
+            'aws_key' => 'nullable|sometimes|string',
+            'aws_secret' => 'nullable|sometimes|string',
+            'aws_region' => 'nullable|sometimes|string',
+            'aws_bucket' => 'nullable|sometimes|string',
         ];
     }
 }
