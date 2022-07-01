@@ -16,7 +16,7 @@ class ValidPath implements InvokableRule
      */
     public function __invoke($attribute, $value, $fail): void
     {
-        if (!ctype_print($value) || !str_ends_with($value, '/')) {
+        if (! ctype_print($value) || ! str_ends_with($value, '/')) {
             $fail('The :attribute is not a valid filepath.');
         }
     }
