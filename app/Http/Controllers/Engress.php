@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\DataTransferObjects\Document as DocumentDataTransferObject;
 use App\Http\Requests\Document;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Wnx\SidecarBrowsershot\BrowsershotLambda;
@@ -15,13 +16,16 @@ class Engress extends Controller
      * Responsible for making sidecar request, and sending contents to render.
      * Will return formatted response.
      *
-     * 
+     *
      * @param Document $request
      * @return JsonResponse
      */
     public function consumeDocumentRequest(Document $request)
     {
         $document = new DocumentDataTransferObject(...$request->all());
+
+        // Set S3 bucket
+        Config::set('filesystems.disks.s3.bucket', $document->bucket);
 
         // Add loop to check we don't create duplicate files
         // as files with same name are replaced, and not duplicated in S3
@@ -31,7 +35,6 @@ class Engress extends Controller
         }
 
         try {
-
             // Generate our document using Sidecar, AWS Lambda and Browsershot.
             $generatedDocument = BrowsershotLambda::html($document->contents)->pdf();
 
@@ -46,13 +49,15 @@ class Engress extends Controller
                 'id' => $document->id,
                 'name' => $document->name,
                 'filename' => $randomlyGeneratedFilename,
-                'path' => $document->path
+                'path' => $document->path,
+                'bucket' => $document->bucket
             ]);
 
         } catch (\Exception $e) {
-            return response(500)->json([
-                'error' => $e->getMessage()
-            ]);
+            return response()->json([
+                'error' => $e->getMessage(),
+                'trace' => $e->getTrace(),
+            ], 500);
         }
     }
 }

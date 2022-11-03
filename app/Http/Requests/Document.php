@@ -18,7 +18,8 @@ class Document extends FormRequest
             'id' => 'required|integer',
             'name' => 'required|string',
             'contents' => 'required',
-            'path' => ['nullable', 'string', new ValidPath]
+            'path' => ['nullable', 'string', new ValidPath],
+            'bucket' => 'required|string',
         ];
     }
 }
