@@ -24,7 +24,7 @@ class Engress extends Controller
     {
         $document = new DocumentDataTransferObject(...$request->all());
 
-        // Set S3 bucket
+        // Set S3 bucket for system
         Config::set('filesystems.disks.s3.bucket', $document->bucket);
 
         // Add loop to check we don't create duplicate files
@@ -35,8 +35,17 @@ class Engress extends Controller
         }
 
         try {
+            // Remove escape characters from content string
+            $contents = trim(
+                preg_replace('/\s\s+/', ' ',
+                    str_replace('\"', '"',
+                        str_replace('\n', '', $document->contents)
+                    )
+                )
+            );
+
             // Generate our document using Sidecar, AWS Lambda and Browsershot.
-            $generatedDocument = BrowsershotLambda::html($document->contents)->pdf();
+            $generatedDocument = BrowsershotLambda::html($contents)->pdf();
 
             // Take binary data, and dump it into S3, with or without a filepath,
             if ($document->path) {
