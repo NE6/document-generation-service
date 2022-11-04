@@ -24,8 +24,10 @@ class Engress extends Controller
     {
         $document = new DocumentDataTransferObject(...$request->all());
 
-        // Set S3 bucket for system
-        Config::set('filesystems.disks.s3.bucket', $document->bucket);
+        // Setup S3 bucket for storage from request
+        Config::set('filesystems.disks.s3', $document->s3);
+        Config::set('filesystems.disks.s3.use_path_style_endpoint', false);
+        Config::set('filesystems.disks.s3.throw', false);
 
         // Add loop to check we don't create duplicate files
         // as files with same name are replaced, and not duplicated in S3

@@ -19,7 +19,14 @@ class Document extends FormRequest
             'name' => 'required|string',
             'contents' => 'required',
             'path' => ['nullable', 'string', new ValidPath],
-            'bucket' => 'required|string',
+            's3' => 'required|array',
+            's3.key' => 'required|string',
+            's3.secret' => 'required|string',
+            's3.region' => 'required|string',
+            's3.bucket' => 'required|string',
+//            's3.url' => 'string',
+//            's3.endpoint' => 'string',
+//            's3.use_path_style_endpoint' => 'string',
         ];
     }
 }

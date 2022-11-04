@@ -167,7 +167,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/document-generation-servivce/dev/1667562496717-2022-11-04T11:48:16.717Z/document-generation-servivce.zip"
+          "S3Key": "serverless/document-generation-servivce/dev/1667565298759-2022-11-04T12:34:58.759Z/document-generation-servivce.zip"
         },
         "Handler": "public/index.php",
         "Runtime": "provided.al2",
@@ -215,7 +215,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/document-generation-servivce/dev/1667562496717-2022-11-04T11:48:16.717Z/document-generation-servivce.zip"
+          "S3Key": "serverless/document-generation-servivce/dev/1667565298759-2022-11-04T12:34:58.759Z/document-generation-servivce.zip"
         },
         "Handler": "artisan",
         "Runtime": "provided.al2",
@@ -257,24 +257,24 @@
         "ArtisanLogGroup"
       ]
     },
-    "WebLambdaVersionDEv5sCD5uOYnXSIwD2WWjCgpzISc5LkyrYudIZguDg": {
+    "WebLambdaVersionmk6SdNyznt8iviVVGtYoxnb9IShryyB0R2pYlXT3U": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "WebLambdaFunction"
         },
-        "CodeSha256": "FVo0QMUAHhANpEXGx9WKRNbTYUS/LvUK+3bqVyu2ed0="
+        "CodeSha256": "TANxVQW+DrC5XKmLdBNYj6NByAlrdNMxVF6C7j+vYw0="
       }
     },
-    "ArtisanLambdaVersionb3Hi7VrY1OY3OlYspz4IGhXjtFY9hAUMxsjqh0NAPzs": {
+    "ArtisanLambdaVersionG1TwvT77CXNyJRFQWDTm20tmVVPPccn6J028ns3FTvE": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ArtisanLambdaFunction"
         },
-        "CodeSha256": "FVo0QMUAHhANpEXGx9WKRNbTYUS/LvUK+3bqVyu2ed0="
+        "CodeSha256": "TANxVQW+DrC5XKmLdBNYj6NByAlrdNMxVF6C7j+vYw0="
       }
     },
     "HttpApi": {
@@ -385,7 +385,7 @@
     "WebLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "WebLambdaVersionDEv5sCD5uOYnXSIwD2WWjCgpzISc5LkyrYudIZguDg"
+        "Ref": "WebLambdaVersionmk6SdNyznt8iviVVGtYoxnb9IShryyB0R2pYlXT3U"
       },
       "Export": {
         "Name": "sls-document-generation-servivce-dev-WebLambdaFunctionQualifiedArn"
@@ -394,7 +394,7 @@
     "ArtisanLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ArtisanLambdaVersionb3Hi7VrY1OY3OlYspz4IGhXjtFY9hAUMxsjqh0NAPzs"
+        "Ref": "ArtisanLambdaVersionG1TwvT77CXNyJRFQWDTm20tmVVPPccn6J028ns3FTvE"
       },
       "Export": {
         "Name": "sls-document-generation-servivce-dev-ArtisanLambdaFunctionQualifiedArn"
