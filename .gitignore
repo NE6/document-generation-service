@@ -12,7 +12,4 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
-.serverless/cloudformation-template-update-stack.json
-.serverless/document-generation-servivce.zip
-.serverless/serverless-state.json
-/.serverless/
+/.serverless
