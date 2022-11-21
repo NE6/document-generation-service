@@ -2,22 +2,33 @@
 
 namespace App\Rules;
 
-use Illuminate\Contracts\Validation\InvokableRule;
+use Illuminate\Contracts\Validation\Rule;
 
-class ValidPath implements InvokableRule
+class ValidPath implements Rule
 {
     /**
-     * Run the validation rule.
+     * Check if the rule passes
      *
-     * @param  string  $attribute
-     * @param  mixed  $value
-     * @param  \Closure(string): \Illuminate\Translation\PotentiallyTranslatedString  $fail
-     * @return void
+     * @param $attribute
+     * @param $value
+     * @return bool
      */
-    public function __invoke($attribute, $value, $fail): void
+    public function passes($attribute, $value): bool
     {
         if (!ctype_print($value) || !str_ends_with($value, '/')) {
-            $fail('The :attribute is not a valid filepath.');
+            return false;
         }
+
+        return true;
+    }
+
+    /**
+     * Message on failure
+     *
+     * @return string
+     */
+    public function message(): string
+    {
+        return 'The :attribute is not a valid filepath.';
     }
 }

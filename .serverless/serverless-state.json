@@ -9,24 +9,18 @@
       "region": "eu-west-2",
       "stage": "dev",
       "runtime": "provided.al2",
-      "lambdaHashingVersion": "20201221",
       "environment": {
         "APP_NAME": "Document Gen Testing",
         "APP_ENV": "local",
         "APP_KEY": "base64:Yx84gi7O3UgxPo9bCBPeNukGfMr+m/JDS/sug5KVEso=",
         "APP_DEBUG": "true",
-        "APP_URL": "https://hz540jzw7g.execute-api.eu-west-2.amazonaws.com",
-        "S3_ACCESS_KEY_ID": "AKIASNXF6JU7355B3HNO",
-        "S3_SECRET_ACCESS_KEY": "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",
-        "S3_DEFAULT_REGION": "eu-west-2",
-        "S3_BUCKET": "document-generation-testing",
-        "S3_USE_PATH_STYLE_ENDPOINT": "false",
-        "SIDECAR_ACCESS_KEY_ID": "AKIASNXF6JU72XANGPJM",
-        "SIDECAR_SECRET_ACCESS_KEY": "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",
-        "SIDECAR_REGION": "eu-west-2",
-        "SIDECAR_ARTIFACT_BUCKET_NAME": "sidecar-document-gen-testing",
-        "SIDECAR_EXECUTION_ROLE": "arn:aws:iam::166912216383:role/sidecar-execution-role",
-        "IDECAR_ENV": "YOUR_NAME_local"
+        "APP_URL": "https://kae1vuocx6.execute-api.eu-west-2.amazonaws.com",
+        "IDECAR_ENV": "YOUR_NAME_local",
+        "DB_HOST": "doc-gen-db-test.ciubew2g6vto.eu-west-2.rds.amazonaws.com",
+        "DB_PORT": "3306",
+        "DB_DATABASE": "document_generation",
+        "DB_USERNAME": "admin",
+        "DB_PASSWORD": "YgBtWb1uk7HDGQZQeiVY"
       },
       "versionFunctions": true,
       "compiledCloudFormationTemplate": {
@@ -198,7 +192,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/document-generation-servivce/dev/1667565298759-2022-11-04T12:34:58.759Z/document-generation-servivce.zip"
+                "S3Key": "serverless/document-generation-servivce/dev/1668082849031-2022-11-10T12:20:49.031Z/document-generation-servivce.zip"
               },
               "Handler": "public/index.php",
               "Runtime": "provided.al2",
@@ -211,18 +205,13 @@
                   "APP_ENV": "local",
                   "APP_KEY": "base64:Yx84gi7O3UgxPo9bCBPeNukGfMr+m/JDS/sug5KVEso=",
                   "APP_DEBUG": "true",
-                  "APP_URL": "https://hz540jzw7g.execute-api.eu-west-2.amazonaws.com",
-                  "S3_ACCESS_KEY_ID": "AKIASNXF6JU7355B3HNO",
-                  "S3_SECRET_ACCESS_KEY": "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",
-                  "S3_DEFAULT_REGION": "eu-west-2",
-                  "S3_BUCKET": "document-generation-testing",
-                  "S3_USE_PATH_STYLE_ENDPOINT": "false",
-                  "SIDECAR_ACCESS_KEY_ID": "AKIASNXF6JU72XANGPJM",
-                  "SIDECAR_SECRET_ACCESS_KEY": "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",
-                  "SIDECAR_REGION": "eu-west-2",
-                  "SIDECAR_ARTIFACT_BUCKET_NAME": "sidecar-document-gen-testing",
-                  "SIDECAR_EXECUTION_ROLE": "arn:aws:iam::166912216383:role/sidecar-execution-role",
-                  "IDECAR_ENV": "YOUR_NAME_local"
+                  "APP_URL": "https://kae1vuocx6.execute-api.eu-west-2.amazonaws.com",
+                  "IDECAR_ENV": "YOUR_NAME_local",
+                  "DB_HOST": "doc-gen-db-test.ciubew2g6vto.eu-west-2.rds.amazonaws.com",
+                  "DB_PORT": "3306",
+                  "DB_DATABASE": "document_generation",
+                  "DB_USERNAME": "admin",
+                  "DB_PASSWORD": "YgBtWb1uk7HDGQZQeiVY"
                 }
               },
               "Role": {
@@ -232,7 +221,7 @@
                 ]
               },
               "Layers": [
-                "arn:aws:lambda:eu-west-2:209497400698:layer:php-81-fpm:34"
+                "arn:aws:lambda:eu-west-2:209497400698:layer:php-81-fpm:35"
               ]
             },
             "DependsOn": [
@@ -246,7 +235,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/document-generation-servivce/dev/1667565298759-2022-11-04T12:34:58.759Z/document-generation-servivce.zip"
+                "S3Key": "serverless/document-generation-servivce/dev/1668082849031-2022-11-10T12:20:49.031Z/document-generation-servivce.zip"
               },
               "Handler": "artisan",
               "Runtime": "provided.al2",
@@ -259,18 +248,13 @@
                   "APP_ENV": "local",
                   "APP_KEY": "base64:Yx84gi7O3UgxPo9bCBPeNukGfMr+m/JDS/sug5KVEso=",
                   "APP_DEBUG": "true",
-                  "APP_URL": "https://hz540jzw7g.execute-api.eu-west-2.amazonaws.com",
-                  "S3_ACCESS_KEY_ID": "AKIASNXF6JU7355B3HNO",
-                  "S3_SECRET_ACCESS_KEY": "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",
-                  "S3_DEFAULT_REGION": "eu-west-2",
-                  "S3_BUCKET": "document-generation-testing",
-                  "S3_USE_PATH_STYLE_ENDPOINT": "false",
-                  "SIDECAR_ACCESS_KEY_ID": "AKIASNXF6JU72XANGPJM",
-                  "SIDECAR_SECRET_ACCESS_KEY": "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",
-                  "SIDECAR_REGION": "eu-west-2",
-                  "SIDECAR_ARTIFACT_BUCKET_NAME": "sidecar-document-gen-testing",
-                  "SIDECAR_EXECUTION_ROLE": "arn:aws:iam::166912216383:role/sidecar-execution-role",
-                  "IDECAR_ENV": "YOUR_NAME_local"
+                  "APP_URL": "https://kae1vuocx6.execute-api.eu-west-2.amazonaws.com",
+                  "IDECAR_ENV": "YOUR_NAME_local",
+                  "DB_HOST": "doc-gen-db-test.ciubew2g6vto.eu-west-2.rds.amazonaws.com",
+                  "DB_PORT": "3306",
+                  "DB_DATABASE": "document_generation",
+                  "DB_USERNAME": "admin",
+                  "DB_PASSWORD": "YgBtWb1uk7HDGQZQeiVY"
                 }
               },
               "Role": {
@@ -280,32 +264,32 @@
                 ]
               },
               "Layers": [
-                "arn:aws:lambda:eu-west-2:209497400698:layer:php-81:34",
-                "arn:aws:lambda:eu-west-2:209497400698:layer:console:73"
+                "arn:aws:lambda:eu-west-2:209497400698:layer:php-81:35",
+                "arn:aws:lambda:eu-west-2:209497400698:layer:console:74"
               ]
             },
             "DependsOn": [
               "ArtisanLogGroup"
             ]
           },
-          "WebLambdaVersionmk6SdNyznt8iviVVGtYoxnb9IShryyB0R2pYlXT3U": {
+          "WebLambdaVersionrnXJJazuX0z36P60sxuHvZqNG2fg8SHpKjD5v1Ukw8": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "WebLambdaFunction"
               },
-              "CodeSha256": "TANxVQW+DrC5XKmLdBNYj6NByAlrdNMxVF6C7j+vYw0="
+              "CodeSha256": "oSUDq/PSwdwFl1z0Azosdm9FV5jkM5fTLcQnxsUrqq4="
             }
           },
-          "ArtisanLambdaVersionG1TwvT77CXNyJRFQWDTm20tmVVPPccn6J028ns3FTvE": {
+          "ArtisanLambdaVersiontz9A1vnmcMn3jaeDyHCardJlYAyGBvbzd7ndSBcxg": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ArtisanLambdaFunction"
               },
-              "CodeSha256": "TANxVQW+DrC5XKmLdBNYj6NByAlrdNMxVF6C7j+vYw0="
+              "CodeSha256": "oSUDq/PSwdwFl1z0Azosdm9FV5jkM5fTLcQnxsUrqq4="
             }
           },
           "HttpApi": {
@@ -413,7 +397,7 @@
           "WebLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "WebLambdaVersionmk6SdNyznt8iviVVGtYoxnb9IShryyB0R2pYlXT3U"
+              "Ref": "WebLambdaVersionrnXJJazuX0z36P60sxuHvZqNG2fg8SHpKjD5v1Ukw8"
             },
             "Export": {
               "Name": "sls-document-generation-servivce-dev-WebLambdaFunctionQualifiedArn"
@@ -422,7 +406,7 @@
           "ArtisanLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ArtisanLambdaVersionG1TwvT77CXNyJRFQWDTm20tmVVPPccn6J028ns3FTvE"
+              "Ref": "ArtisanLambdaVersiontz9A1vnmcMn3jaeDyHCardJlYAyGBvbzd7ndSBcxg"
             },
             "Export": {
               "Name": "sls-document-generation-servivce-dev-ArtisanLambdaFunctionQualifiedArn"
@@ -573,7 +557,7 @@
         "memory": 1024,
         "runtime": "provided.al2",
         "vpc": {},
-        "versionLogicalId": "WebLambdaVersionmk6SdNyznt8iviVVGtYoxnb9IShryyB0R2pYlXT3U"
+        "versionLogicalId": "WebLambdaVersionrnXJJazuX0z36P60sxuHvZqNG2fg8SHpKjD5v1Ukw8"
       },
       "artisan": {
         "handler": "artisan",
@@ -587,7 +571,7 @@
         "memory": 1024,
         "runtime": "provided.al2",
         "vpc": {},
-        "versionLogicalId": "ArtisanLambdaVersionG1TwvT77CXNyJRFQWDTm20tmVVPPccn6J028ns3FTvE"
+        "versionLogicalId": "ArtisanLambdaVersiontz9A1vnmcMn3jaeDyHCardJlYAyGBvbzd7ndSBcxg"
       }
     },
     "configValidationMode": "warn",
@@ -607,7 +591,7 @@
         ],
         "artifactsS3KeyDirname": "serverless/document-generation-servivce/dev/code-artifacts",
         "artifact": "/Users/ivandelreycousins/Documents/NE6 Projects/document-generation-service/.serverless/document-generation-servivce.zip",
-        "artifactDirectoryName": "serverless/document-generation-servivce/dev/1667565298759-2022-11-04T12:34:58.759Z"
+        "artifactDirectoryName": "serverless/document-generation-servivce/dev/1668082849031-2022-11-10T12:20:49.031Z"
       },
       "functions": {
         "$ref": "$[\"service\"][\"functions\"]"
@@ -621,7 +605,7 @@
     "artifact": "/Users/ivandelreycousins/Documents/NE6 Projects/document-generation-service/.serverless/document-generation-servivce.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/document-generation-servivce/dev/1667565298759-2022-11-04T12:34:58.759Z",
+    "artifactDirectoryName": "serverless/document-generation-servivce/dev/1668082849031-2022-11-10T12:20:49.031Z",
     "artifact": "document-generation-servivce.zip"
   }
 }

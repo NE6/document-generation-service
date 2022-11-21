@@ -11,13 +11,19 @@ class Document
      * @param string $name
      * @param string $contents
      * @param string|null $path
-     * @param S3Data $s3
+     * @param string $key
+     * @param string $secret
+     * @param string $region
+     * @param string $bucket
      */
     public function __construct(
         public readonly int $id,
         public readonly string $name,
         public readonly string $contents,
         public readonly ?string $path,
-        public readonly S3Data $s3
+        public readonly string $key,
+        public readonly string $secret,
+        public readonly string $region,
+        public readonly string $bucket
     ){}
 }

@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Wnx\SidecarBrowsershot\BrowsershotLambda;
 
-class Engress extends Controller
+class Ingress extends Controller
 {
     /**
      * Responsible for making sidecar request, and sending contents to render.
@@ -22,12 +22,22 @@ class Engress extends Controller
      */
     public function consumeDocumentRequest(Document $request)
     {
-        $document = new DocumentDataTransferObject(...$request->all());
+
+        $document = new DocumentDataTransferObject(...$request->validated());
 
         // Setup S3 bucket for storage from request
-        Config::set('filesystems.disks.s3', $document->s3);
-        Config::set('filesystems.disks.s3.use_path_style_endpoint', false);
-        Config::set('filesystems.disks.s3.throw', false);
+        $s3 = [
+            'driver' => 's3',
+            'key' => $document->key,
+            'secret' => $document->secret,
+            'region' => $document->region,
+            'bucket' => $document->bucket,
+            'url' => null,
+            'endpoint' => null,
+            'use_path_style_endpoint' => false,
+            'throw' => false,
+        ];
+        Config::set('filesystems.disks.s3', $s3);
 
         // Add loop to check we don't create duplicate files
         // as files with same name are replaced, and not duplicated in S3

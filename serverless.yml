@@ -7,14 +7,18 @@ provider:
     # The stage of the application, e.g. dev, production, staging… ('dev' is the default)
     stage: dev
     runtime: provided.al2
-    lambdaHashingVersion: 20201221
     environment:
       APP_NAME: "Document Gen Testing"
       APP_ENV: local
       APP_KEY: base64:Yx84gi7O3UgxPo9bCBPeNukGfMr+m/JDS/sug5KVEso=
       APP_DEBUG: true
-      APP_URL: https://hz540jzw7g.execute-api.eu-west-2.amazonaws.com
+      APP_URL: https://kae1vuocx6.execute-api.eu-west-2.amazonaws.com
       IDECAR_ENV: YOUR_NAME_local
+      DB_HOST: ${ssm:/doc-gen-service/db-host}
+      DB_PORT: ${ssm:/doc-gen-service/db-port}
+      DB_DATABASE: ${ssm:/doc-gen-service/db-name}
+      DB_USERNAME: ${ssm:/doc-gen-service/db-user}
+      DB_PASSWORD: ${ssm:/doc-gen-service/db-password}
 
 package:
     # Directories to exclude from deployment
@@ -43,5 +47,4 @@ functions:
             - ${bref:layer.console} # The "console" layer
 
 plugins:
-    # We need to include the Bref plugin
-    - ./vendor/bref/bref
+  - ./vendor/bref/bref
