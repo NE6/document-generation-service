@@ -19,6 +19,10 @@ provider:
       DB_DATABASE: ${ssm:/doc-gen-service/db-name}
       DB_USERNAME: ${ssm:/doc-gen-service/db-user}
       DB_PASSWORD: ${ssm:/doc-gen-service/db-password}
+      SIDECAR_ACCESS_KEY_ID: ${ssm:/doc-gen-service/full-access-key}
+      SIDECAR_SECRET_ACCESS_KEY: ${ssm:/doc-gen-service/full-access-secret}
+      AWS_ACCESS_KEY_ID: ${ssm:/doc-gen-service/s3-access-key}
+      AWS_SECRET_ACCESS_KEY: ${ssm:/doc-gen-service/s3-access-secret}
 
 package:
     # Directories to exclude from deployment

@@ -192,7 +192,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/document-generation-servivce/dev/1668082849031-2022-11-10T12:20:49.031Z/document-generation-servivce.zip"
+                "S3Key": "serverless/document-generation-servivce/dev/1669030358566-2022-11-21T11:32:38.566Z/document-generation-servivce.zip"
               },
               "Handler": "public/index.php",
               "Runtime": "provided.al2",
@@ -235,7 +235,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/document-generation-servivce/dev/1668082849031-2022-11-10T12:20:49.031Z/document-generation-servivce.zip"
+                "S3Key": "serverless/document-generation-servivce/dev/1669030358566-2022-11-21T11:32:38.566Z/document-generation-servivce.zip"
               },
               "Handler": "artisan",
               "Runtime": "provided.al2",
@@ -272,24 +272,24 @@
               "ArtisanLogGroup"
             ]
           },
-          "WebLambdaVersionrnXJJazuX0z36P60sxuHvZqNG2fg8SHpKjD5v1Ukw8": {
+          "WebLambdaVersionBe6BCGvmIDZcT0t7jj4Xu0dya6XaVUTYE8cpAsUb6oU": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "WebLambdaFunction"
               },
-              "CodeSha256": "oSUDq/PSwdwFl1z0Azosdm9FV5jkM5fTLcQnxsUrqq4="
+              "CodeSha256": "lYa8ecD4I19QA9k+eYqh1VqrT6u6mhY+JB+GFvzfROI="
             }
           },
-          "ArtisanLambdaVersiontz9A1vnmcMn3jaeDyHCardJlYAyGBvbzd7ndSBcxg": {
+          "ArtisanLambdaVersionQydWAamM7D0HKkVN4pfwKwGaHCFfceRywkVRbiK3M": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ArtisanLambdaFunction"
               },
-              "CodeSha256": "oSUDq/PSwdwFl1z0Azosdm9FV5jkM5fTLcQnxsUrqq4="
+              "CodeSha256": "lYa8ecD4I19QA9k+eYqh1VqrT6u6mhY+JB+GFvzfROI="
             }
           },
           "HttpApi": {
@@ -397,7 +397,7 @@
           "WebLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "WebLambdaVersionrnXJJazuX0z36P60sxuHvZqNG2fg8SHpKjD5v1Ukw8"
+              "Ref": "WebLambdaVersionBe6BCGvmIDZcT0t7jj4Xu0dya6XaVUTYE8cpAsUb6oU"
             },
             "Export": {
               "Name": "sls-document-generation-servivce-dev-WebLambdaFunctionQualifiedArn"
@@ -406,7 +406,7 @@
           "ArtisanLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ArtisanLambdaVersiontz9A1vnmcMn3jaeDyHCardJlYAyGBvbzd7ndSBcxg"
+              "Ref": "ArtisanLambdaVersionQydWAamM7D0HKkVN4pfwKwGaHCFfceRywkVRbiK3M"
             },
             "Export": {
               "Name": "sls-document-generation-servivce-dev-ArtisanLambdaFunctionQualifiedArn"
@@ -557,7 +557,7 @@
         "memory": 1024,
         "runtime": "provided.al2",
         "vpc": {},
-        "versionLogicalId": "WebLambdaVersionrnXJJazuX0z36P60sxuHvZqNG2fg8SHpKjD5v1Ukw8"
+        "versionLogicalId": "WebLambdaVersionBe6BCGvmIDZcT0t7jj4Xu0dya6XaVUTYE8cpAsUb6oU"
       },
       "artisan": {
         "handler": "artisan",
@@ -571,7 +571,7 @@
         "memory": 1024,
         "runtime": "provided.al2",
         "vpc": {},
-        "versionLogicalId": "ArtisanLambdaVersiontz9A1vnmcMn3jaeDyHCardJlYAyGBvbzd7ndSBcxg"
+        "versionLogicalId": "ArtisanLambdaVersionQydWAamM7D0HKkVN4pfwKwGaHCFfceRywkVRbiK3M"
       }
     },
     "configValidationMode": "warn",
@@ -591,7 +591,7 @@
         ],
         "artifactsS3KeyDirname": "serverless/document-generation-servivce/dev/code-artifacts",
         "artifact": "/Users/ivandelreycousins/Documents/NE6 Projects/document-generation-service/.serverless/document-generation-servivce.zip",
-        "artifactDirectoryName": "serverless/document-generation-servivce/dev/1668082849031-2022-11-10T12:20:49.031Z"
+        "artifactDirectoryName": "serverless/document-generation-servivce/dev/1669030358566-2022-11-21T11:32:38.566Z"
       },
       "functions": {
         "$ref": "$[\"service\"][\"functions\"]"
@@ -605,7 +605,7 @@
     "artifact": "/Users/ivandelreycousins/Documents/NE6 Projects/document-generation-service/.serverless/document-generation-servivce.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/document-generation-servivce/dev/1668082849031-2022-11-10T12:20:49.031Z",
+    "artifactDirectoryName": "serverless/document-generation-servivce/dev/1669030358566-2022-11-21T11:32:38.566Z",
     "artifact": "document-generation-servivce.zip"
   }
 }
