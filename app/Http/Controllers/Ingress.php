@@ -17,12 +17,11 @@ class Ingress extends Controller
      * Will return formatted response.
      *
      *
-     * @param Document $request
+     * @param  Document  $request
      * @return JsonResponse
      */
     public function consumeDocumentRequest(Document $request)
     {
-
         $document = new DocumentDataTransferObject(...$request->validated());
 
         // Setup S3 bucket for storage from request
@@ -66,14 +65,15 @@ class Ingress extends Controller
                 Storage::disk('s3')->put("$randomlyGeneratedFilename.pdf", $generatedDocument);
             }
 
+            $request->user()->addDocument();
+
             return response()->json([
                 'id' => $document->id,
                 'name' => $document->name,
                 'filename' => $randomlyGeneratedFilename,
                 'path' => $document->path,
-                'bucket' => $document->bucket
+                'bucket' => $document->bucket,
             ]);
-
         } catch (\Exception $e) {
             return response()->json([
                 'error' => $e->getMessage(),

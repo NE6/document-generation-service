@@ -55,16 +55,18 @@ class Handler extends ExceptionHandler
      * If object can't be found we return proper response.
      *
      * @param $request
-     * @param Throwable $e
+     * @param  Throwable  $e
      * @return Response|JsonResponse|\Symfony\Component\HttpFoundation\Response
+     *
      * @throws Throwable
      */
     public function render($request, Throwable $e): Response|JsonResponse|\Symfony\Component\HttpFoundation\Response
     {
         if ($e instanceof ModelNotFoundException) {
             return response()->json([
-                'error' => 'Entry for '.str_replace('App\\', '', $exception->getModel()).' not found'], 404);
+                'error' => 'Entry for '.str_replace('App\\', '', $exception->getModel()).' not found', ], 404);
         }
+
         return parent::render($request, $e);
     }
 }

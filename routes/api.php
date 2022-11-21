@@ -1,8 +1,6 @@
 <?php
 
 use App\Http\Controllers\Ingress;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,4 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/document', [Ingress::class, 'consumeDocumentRequest']);
+Route::middleware('auth.basic')->post('/document', [Ingress::class, 'consumeDocumentRequest']);
