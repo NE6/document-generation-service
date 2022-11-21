@@ -167,7 +167,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/document-generation-servivce/dev/1669030358566-2022-11-21T11:32:38.566Z/document-generation-servivce.zip"
+          "S3Key": "serverless/document-generation-servivce/dev/1669039924598-2022-11-21T14:12:04.598Z/document-generation-servivce.zip"
         },
         "Handler": "public/index.php",
         "Runtime": "provided.al2",
@@ -180,13 +180,15 @@
             "APP_ENV": "local",
             "APP_KEY": "base64:Yx84gi7O3UgxPo9bCBPeNukGfMr+m/JDS/sug5KVEso=",
             "APP_DEBUG": "true",
-            "APP_URL": "https://kae1vuocx6.execute-api.eu-west-2.amazonaws.com",
+            "APP_URL": "https://2liwkryk96.execute-api.eu-west-2.amazonaws.com",
             "IDECAR_ENV": "YOUR_NAME_local",
             "DB_HOST": "doc-gen-db-test.ciubew2g6vto.eu-west-2.rds.amazonaws.com",
             "DB_PORT": "3306",
             "DB_DATABASE": "document_generation",
             "DB_USERNAME": "admin",
-            "DB_PASSWORD": "YgBtWb1uk7HDGQZQeiVY"
+            "DB_PASSWORD": "YgBtWb1uk7HDGQZQeiVY",
+            "SIDECAR_ACCESS_KEY_ID": "AKIASNXF6JU76SCJETVK",
+            "SIDECAR_SECRET_ACCESS_KEY": "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"
           }
         },
         "Role": {
@@ -210,7 +212,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/document-generation-servivce/dev/1669030358566-2022-11-21T11:32:38.566Z/document-generation-servivce.zip"
+          "S3Key": "serverless/document-generation-servivce/dev/1669039924598-2022-11-21T14:12:04.598Z/document-generation-servivce.zip"
         },
         "Handler": "artisan",
         "Runtime": "provided.al2",
@@ -223,13 +225,15 @@
             "APP_ENV": "local",
             "APP_KEY": "base64:Yx84gi7O3UgxPo9bCBPeNukGfMr+m/JDS/sug5KVEso=",
             "APP_DEBUG": "true",
-            "APP_URL": "https://kae1vuocx6.execute-api.eu-west-2.amazonaws.com",
+            "APP_URL": "https://2liwkryk96.execute-api.eu-west-2.amazonaws.com",
             "IDECAR_ENV": "YOUR_NAME_local",
             "DB_HOST": "doc-gen-db-test.ciubew2g6vto.eu-west-2.rds.amazonaws.com",
             "DB_PORT": "3306",
             "DB_DATABASE": "document_generation",
             "DB_USERNAME": "admin",
-            "DB_PASSWORD": "YgBtWb1uk7HDGQZQeiVY"
+            "DB_PASSWORD": "YgBtWb1uk7HDGQZQeiVY",
+            "SIDECAR_ACCESS_KEY_ID": "AKIASNXF6JU76SCJETVK",
+            "SIDECAR_SECRET_ACCESS_KEY": "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"
           }
         },
         "Role": {
@@ -247,24 +251,24 @@
         "ArtisanLogGroup"
       ]
     },
-    "WebLambdaVersionBe6BCGvmIDZcT0t7jj4Xu0dya6XaVUTYE8cpAsUb6oU": {
+    "WebLambdaVersionl6gGaCzG89gplXX8C8EdkMy75MQuDsSfDLgR60x0BJU": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "WebLambdaFunction"
         },
-        "CodeSha256": "lYa8ecD4I19QA9k+eYqh1VqrT6u6mhY+JB+GFvzfROI="
+        "CodeSha256": "jM3HP05Cg9w72uyBORwlkzpMHRU8aQN4eH+TcRTt3Xk="
       }
     },
-    "ArtisanLambdaVersionQydWAamM7D0HKkVN4pfwKwGaHCFfceRywkVRbiK3M": {
+    "ArtisanLambdaVersion0oKYs3qQqZzkeK84ZSirRDbu2Q57yoSAyx9yvoAqpSU": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ArtisanLambdaFunction"
         },
-        "CodeSha256": "lYa8ecD4I19QA9k+eYqh1VqrT6u6mhY+JB+GFvzfROI="
+        "CodeSha256": "jM3HP05Cg9w72uyBORwlkzpMHRU8aQN4eH+TcRTt3Xk="
       }
     },
     "HttpApi": {
@@ -375,7 +379,7 @@
     "WebLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "WebLambdaVersionBe6BCGvmIDZcT0t7jj4Xu0dya6XaVUTYE8cpAsUb6oU"
+        "Ref": "WebLambdaVersionl6gGaCzG89gplXX8C8EdkMy75MQuDsSfDLgR60x0BJU"
       },
       "Export": {
         "Name": "sls-document-generation-servivce-dev-WebLambdaFunctionQualifiedArn"
@@ -384,7 +388,7 @@
     "ArtisanLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ArtisanLambdaVersionQydWAamM7D0HKkVN4pfwKwGaHCFfceRywkVRbiK3M"
+        "Ref": "ArtisanLambdaVersion0oKYs3qQqZzkeK84ZSirRDbu2Q57yoSAyx9yvoAqpSU"
       },
       "Export": {
         "Name": "sls-document-generation-servivce-dev-ArtisanLambdaFunctionQualifiedArn"
